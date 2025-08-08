@@ -1,0 +1,119 @@
+model_dir_ddpm_bspline: '${HOME}/Projects/MotionPlanningDiffusion/mpd-splines/data_trained_models/launch_train_diffusion_models-v04_2024-09-18_08-12-54/generative_model_class___GaussianDiffusionModel/dataset_subdir___EnvSpheres3D-RobotPanda-joint_joint-one-RRTConnect/dataset_file_merged___dataset_merged_doubled.hdf5/context_ee_goal_pose___True/unet_input_dim___32/unet_dim_mults_option___1/context_q_out_dim___128/context_ee_goal_pose_out_dim___128/context_combined_out_dim___128/bspline_num_control_points_desired___24/parametric_trajectory_class___ParametricTrajectoryBspline/0'
+
+model_dir_cvae_bspline: '${HOME}/Projects/MotionPlanningDiffusion/mpd-splines/data_trained_models/launch_train_cvae_models-v04_2024-09-18_08-14-47/generative_model_class___CVAEModel/dataset_subdir___EnvSpheres3D-RobotPanda-joint_joint-one-RRTConnect/dataset_file_merged___dataset_merged_doubled.hdf5/context_ee_goal_pose___True/unet_input_dim___32/unet_dim_mults_option___1/context_q_out_dim___128/context_ee_goal_pose_out_dim___128/context_combined_out_dim___128/bspline_num_control_points_desired___24/parametric_trajectory_class___ParametricTrajectoryBspline/0'
+
+model_dir_ddpm_waypoints: '${HOME}/Projects/MotionPlanningDiffusion/mpd-splines/data_trained_models/launch_train_diffusion_models-v04_2024-11-11_10-27-59/generative_model_class___GaussianDiffusionModel/dataset_subdir___EnvSpheres3D-RobotPanda-joint_joint-one-RRTConnect/dataset_file_merged___dataset_merged_doubled.hdf5/context_ee_goal_pose___True/unet_input_dim___32/unet_dim_mults_option___1/context_q_out_dim___128/context_ee_goal_pose_out_dim___128/context_combined_out_dim___128/bspline_num_control_points_desired___24/parametric_trajectory_class___ParametricTrajectoryWaypoints/0'
+
+
+model_selection: 'bspline'  # 'bspline', 'waypoints'
+
+#######################################################################################################################
+# environment options
+
+min_distance_q_pos_start_goal: 3.5  # minimum distance between start and goal configurations np.sqrt(7*2*(np.pi/2)**2)=5.88
+
+env_id_replace: null
+#env_id_replace: 'EnvSpheres3DExtraObjectsV00'
+
+grasped_object: null
+
+# collision avoidance/checking options
+# extra margin for object collision cost (sdf is clamped if it is greater than this value)
+# 0.02 for 2D tasks, 0.05 for panda tasks
+obstacle_cutoff_margin_extra: 0.05
+# Points whose distance to the objects is less than this margin are considered in collision
+margin_for_dense_collision_checking:  0.0
+
+#######################################################################################################################
+# task options
+
+num_T_pts: 128  # number of time points in the trajectory (> 128 for smoother results)
+trajectory_duration: 10.0  # seconds
+phase_time_class: 'PhaseTimeLinear'  # PhaseTimeLinear, PhaseTimeSigmoid
+#phase_time_class: 'PhaseTimeSigmoid'  # PhaseTimeLinear, PhaseTimeSigmoid
+
+project_gradient_hierarchy: false  # project the gradients hierarchically
+
+# if project_gradient_hierarchy is true, the cost/gradient hierarchy is defined from top to bottom
+costs:
+  CostTaskSpaceCollisionObjects:
+    weight: 10.0
+    use_only_on_extra_objects: false
+  CostTaskSpaceCollisionSelf:
+    weight: 1.0
+  CostJointSpaceJointLimits:
+    weight: 1.0
+  CostTaskSpaceEEGoalPose:
+    weight: 1.0
+  CostJointSpaceVelocity:
+    weight: 0.01
+  CostJointSpaceAcceleration:
+    weight: 0.001
+
+
+n_trajectory_samples: 100  # batch size for sampling
+
+best_trajectory_selection: 'shortest_path_length'
+
+#######################################################################################################################
+# Planner options
+
+planner_alg: 'mpd'  # diffusion_prior, diffusion_prior_then_guide, mpd, gp_prior_then_guide, knn_prior_then_guide, cvae, cvae_prior_then_guide
+
+diffusion_sampling_method: 'ddim'  # ddim, ddpm (not tuned)
+
+compute_costs_with_xrecon: false
+
+n_diffusion_steps_without_noise: 0
+
+extra_mp_steps: 0  # number of extra motion planning gradient steps
+
+# ddim options
+ddim:
+  t_start_guide_steps_fraction: 0.3
+  ddim_sampling_timesteps: 15
+  ddim_eta: 0.5  # 0.0 for ddim, 1.0 for ddpm
+  ddim_skip_type: 'quadratic'  # 'uniform', 'quadratic', 'exponential'
+  ddim_scale_grad_prior: 0.25
+  n_guide_steps: 4
+  guide_lr: 1.0
+  max_perturb_x: 0.15  # maximum perturbation from the diffusion mean during guide steps
+  clip_grad: true
+  clip_grad_rule: 'value'  # 'norm', 'value'
+  max_grad_norm: 1.  # clip the norm of the control point gradients
+  max_grad_value: 1.  # clip the control point gradients
+
+# diffusion_prior_then_guide options
+diffusion_prior_then_guide:  &repl
+  n_guide_steps: 12  # the same number of guide steps as used in MPD with DDIM
+  guide_lr: 0.01
+  max_perturb_x: 0.15  # maximum perturbation from the diffusion mean during guide steps
+  clip_grad: true
+  clip_grad_rule: 'value'  # 'norm', 'value'
+  max_grad_norm: 1.  # clip the norm of the control point gradients
+  max_grad_value: 1.  # clip the control point gradients
+
+# ddpm options
+ddpm:
+  t_start_guide_steps_fraction: 0.2
+  prior_weight_with_guide: 0.95
+  noise_std: 0.7
+  n_guide_steps: 2
+  guide_lr: 0.01
+  max_perturb_x: 0.15  # maximum perturbation from the diffusion mean during guide steps
+  clip_grad: true
+  clip_grad_rule: 'value'  # 'norm', 'value'
+  max_grad_norm: 1.  # clip the norm of the control point gradients
+  max_grad_value: 1.  # clip the control point gradients
+
+gp_prior_then_guide:
+  <<: *repl
+
+knn_prior_then_guide:
+  <<: *repl
+
+cvae_prior_then_guide:
+  <<: *repl
+
+rrtconnect_then_guide:
+  <<: *repl

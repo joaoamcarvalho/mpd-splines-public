@@ -1,0 +1,143 @@
+<?xml version="1.0" ?>
+<robot name="planar_robot_4_link" version="1.0">
+   <link name="world"/>
+   <joint name="base_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <parent link="world"/>
+      <child link="base_link"/>
+   </joint>
+   <link name="base_link">
+      <visual>
+         <geometry>
+            <cylinder radius="0.01" length="0.01"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <geometry>
+            <cylinder radius="0.01" length="0.01"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_1" type="revolute">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="base_link"/>
+      <child link="link_1"/>
+      <limit effort="320.0" lower="-2.97" upper="2.97" velocity="2.35619449019"/>
+   </joint>
+   <link name="link_1">
+      <visual>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_2" type="revolute">
+      <origin xyz="0.2 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="link_1"/>
+      <child link="link_2"/>
+      <limit effort="320.0" lower="-2.36" upper="2.36" velocity="2.35619449019"/>
+   </joint>
+   <link name="link_2">
+      <visual>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_3" type="revolute">
+      <origin xyz="0.2 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="link_2"/>
+      <child link="link_3"/>
+      <limit effort="320.0" lower="-2.36" upper="2.36" velocity="2.35619449019"/>
+   </joint>
+   <link name="link_3">
+      <visual>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_4" type="revolute">
+      <origin xyz="0.2 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="link_3"/>
+      <child link="link_4"/>
+      <limit effort="320.0" lower="-2.36" upper="2.36" velocity="2.35619449019"/>
+   </joint>
+   <link name="link_4">
+      <visual>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <origin xyz="0.1 0.0 0.0" rpy="0.0 1.57079632679 0.0"/>
+         <geometry>
+            <cylinder radius="0.01" length="0.2"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_ee" type="fixed">
+      <origin xyz="0.2 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <axis xyz="1.0 0.0 0.0"/>
+      <parent link="link_4"/>
+      <child link="link_ee"/>
+   </joint>
+   <link name="link_ee">
+      <visual>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="white">
+            <color rgba="1.0 1.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+      </collision>
+   </link>
+</robot>

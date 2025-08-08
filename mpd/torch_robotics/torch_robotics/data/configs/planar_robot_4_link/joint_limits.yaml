@@ -1,0 +1,23 @@
+joint_1:
+  qmax: 2.97
+  qmin: -2.97
+  qdot_max: 2.1750
+  qddot_max: 15.0
+
+joint_2:
+  qmax: 2.36
+  qmin: -2.36
+  qdot_max: 2.1750
+  qddot_max: 15.0
+
+joint_3:
+  qmax: 2.36
+  qmin: -2.36
+  qdot_max: 2.1750
+  qddot_max: 15.0
+
+joint_4:
+  qmax: 2.36
+  qmin: -2.36
+  qdot_max: 2.1750
+  qddot_max: 15.0

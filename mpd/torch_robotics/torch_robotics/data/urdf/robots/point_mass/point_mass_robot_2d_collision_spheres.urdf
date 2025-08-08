@@ -1,0 +1,66 @@
+<?xml version="1.0" ?>
+<robot name="pointmass2d" version="1.0">
+   <link name="base">
+      <visual>
+         <geometry>
+            <box size="0.01 0.01 0.01"/>
+         </geometry>
+         <material name="box">
+            <color rgba="1.0 0.0 0.0 1.0"/>
+         </material>
+      </visual>
+   </link>
+   <link name="dummy"/>
+   <link name="dummy2"/>
+   <joint name="p_joint_x" type="prismatic">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <axis xyz="1.0 0.0 0.0"/>
+      <parent link="base"/>
+      <child link="dummy"/>
+      <limit effort="1.0" lower="-1.0" upper="1.0" velocity="5.0"/>
+   </joint>
+   <joint name="p_joint_y" type="prismatic">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <axis xyz="0.0 1.0 0.0"/>
+      <parent link="dummy"/>
+      <child link="dummy2"/>
+      <limit effort="1.0" lower="-1.0" upper="1.0" velocity="5.0"/>
+   </joint>
+   <link name="robot">
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="robot">
+            <color rgba="0.0 0.0 1.0 1.0"/>
+         </material>
+      </visual>
+      <collision>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="fixed_dummy2_robot" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <axis xyz="0.0 0.0 0.0"/>
+      <parent link="dummy2"/>
+      <child link="robot"/>
+   </joint>
+   <joint name="joint_robot_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <parent link="robot"/>
+      <child link="robot_0"/>
+   </joint>
+   <link name="robot_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="blue">
+            <color rgba="0 0 1 1"/>
+         </material>
+      </visual>
+   </link>
+</robot>

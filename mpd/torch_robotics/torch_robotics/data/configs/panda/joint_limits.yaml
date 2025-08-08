@@ -1,0 +1,42 @@
+# https://frankaemika.github.io/docs/control_parameters.html#limits-for-panda
+panda_joint1:
+  qmax: 2.8973
+  qmin: -2.8973
+  qdot_max: 2.1750
+  qddot_max: 15.0
+
+panda_joint2:
+  qmax: 1.7628
+  qmin: -1.7628
+  qdot_max: 2.1750
+  qddot_max: 7.5
+
+panda_joint3:
+  qmax: 2.8973
+  qmin: -2.8973
+  qdot_max: 2.1750
+  qddot_max: 10.0
+
+panda_joint4:
+  qmax: -0.0698
+  qmin: -3.0718
+  qdot_max: 2.1750
+  qddot_max: 12.5
+
+panda_joint5:
+  qmax: 2.8973
+  qmin: -2.8973
+  qdot_max: 2.6100
+  qddot_max: 15.0
+
+panda_joint6:
+  qmax: 3.7525
+  qmin: -0.0175
+  qdot_max: 2.61
+  qddot_max: 20.0
+
+panda_joint7:
+  qmax: 2.8973
+  qmin: -2.8973
+  qdot_max: 2.6100
+  qddot_max: 20.0

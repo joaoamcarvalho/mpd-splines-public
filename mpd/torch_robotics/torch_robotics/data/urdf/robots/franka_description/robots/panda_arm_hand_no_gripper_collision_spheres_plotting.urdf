@@ -1,0 +1,1149 @@
+<?xml version="1.0" ?>
+<robot name="panda" version="1.0">
+   <link name="panda_link0">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.8142028896"/>
+         <inertia ixx="0.0129886979" ixy="0.0" ixz="0.0" iyy="0.0165355284" iyz="0.0" izz="0.0203311636"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link0.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link0.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <link name="panda_link1">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.3599995791"/>
+         <inertia ixx="0.0186863903" ixy="0.0" ixz="0.0" iyy="0.0143789874" iyz="0.0" izz="0.00906812"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link1.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link1.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint1" type="revolute">
+      <origin xyz="0.0 0.0 0.333" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link0"/>
+      <child link="panda_link1"/>
+      <limit effort="87.0" lower="-2.8973" upper="2.8973" velocity="2.175"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+   </joint>
+   <link name="panda_link2">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.379518833"/>
+         <inertia ixx="0.0190388734" ixy="0.0" ixz="0.0" iyy="0.0091429124" iyz="0.0" izz="0.014697537"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link2.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link2.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint2" type="revolute">
+      <origin xyz="0.0 0.0 0.0" rpy="-1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link1"/>
+      <child link="panda_link2"/>
+      <limit effort="87.0" lower="-1.7628" upper="1.7628" velocity="2.175"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-1.7628" soft_upper_limit="1.7628"/>
+   </joint>
+   <link name="panda_link3">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.6498823337"/>
+         <inertia ixx="0.0129300178" ixy="0.0" ixz="0.0" iyy="0.0150242121" iyz="0.0" izz="0.0142734598"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link3.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link3.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint3" type="revolute">
+      <origin xyz="0.0 -0.316 0.0" rpy="1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link2"/>
+      <child link="panda_link3"/>
+      <limit effort="87.0" lower="-2.8973" upper="2.8973" velocity="2.175"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+   </joint>
+   <link name="panda_link4">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.6948018744"/>
+         <inertia ixx="0.0133874611" ixy="0.0" ixz="0.0" iyy="0.014514325" iyz="0.0" izz="0.0155175551"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link4.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link4.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint4" type="revolute">
+      <origin xyz="0.0825 0.0 0.0" rpy="1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link3"/>
+      <child link="panda_link4"/>
+      <limit effort="87.0" lower="-3.0718" upper="-0.0698" velocity="2.175"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-3.0718" soft_upper_limit="-0.0698"/>
+   </joint>
+   <link name="panda_link5">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="2.9812816864"/>
+         <inertia ixx="0.0325565705" ixy="0.0" ixz="0.0" iyy="0.0270660472" iyz="0.0" izz="0.0115023375"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link5.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link5.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint5" type="revolute">
+      <origin xyz="-0.0825 0.384 0.0" rpy="-1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link4"/>
+      <child link="panda_link5"/>
+      <limit effort="12.0" lower="-2.8973" upper="2.8973" velocity="2.61"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+   </joint>
+   <link name="panda_link6">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="1.1285806309"/>
+         <inertia ixx="0.0026052565" ixy="0.0" ixz="0.0" iyy="0.0039897229" iyz="0.0" izz="0.0047048591"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link6.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link6.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint6" type="revolute">
+      <origin xyz="0.0 0.0 0.0" rpy="1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link6"/>
+      <limit effort="12.0" lower="-0.0175" upper="3.7525" velocity="2.61"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-0.0175" soft_upper_limit="3.7525"/>
+   </joint>
+   <link name="panda_link7">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.4052912465"/>
+         <inertia ixx="0.0006316592" ixy="0.0" ixz="0.0" iyy="0.0006319639" iyz="0.0" izz="0.0010607721"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/link7.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/link7.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="panda_joint7" type="revolute">
+      <origin xyz="0.088 0.0 0.0" rpy="1.57079632679 0.0 0.0"/>
+      <axis xyz="0.0 0.0 1.0"/>
+      <parent link="panda_link6"/>
+      <child link="panda_link7"/>
+      <limit effort="12.0" lower="-2.8973" upper="2.8973" velocity="2.61"/>
+      <safety_controller k_velocity="40.0" k_position="100.0" soft_lower_limit="-2.8973" soft_upper_limit="2.8973"/>
+   </joint>
+   <link name="panda_link8"/>
+   <joint name="panda_joint8" type="fixed">
+      <origin xyz="0.0 0.0 0.107" rpy="0.0 0.0 0.0"/>
+      <axis xyz="0.0 0.0 0.0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link8"/>
+   </joint>
+   <joint name="panda_hand_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 -0.785398163397"/>
+      <parent link="panda_link8"/>
+      <child link="panda_hand"/>
+   </joint>
+   <link name="panda_hand">
+      <inertial>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <mass value="0.5583304799"/>
+         <inertia ixx="0.0023394448" ixy="0.0" ixz="0.0" iyy="0.0005782786" iyz="0.0" izz="0.0021310296"/>
+      </inertial>
+      <visual>
+<!--         <geometry>-->
+<!--            <mesh filename="package://franka_description/meshes/visual/hand.dae"/>-->
+<!--         </geometry>-->
+      </visual>
+      <collision>
+         <geometry>
+            <mesh filename="package://franka_description/meshes/collision/hand.stl"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="ee_fixed_joint" type="fixed">
+      <origin xyz="0.0 0.0 0.1" rpy="0.0 0.0 -1.57"/>
+      <parent link="panda_hand"/>
+      <child link="ee_link"/>
+   </joint>
+   <link name="ee_link">
+      <collision>
+         <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+         <geometry>
+            <box size="0.01 0.01 0.01"/>
+         </geometry>
+      </collision>
+   </link>
+   <joint name="joint_panda_link0_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.05" rpy="0 0 0"/>
+      <parent link="panda_link0"/>
+      <child link="panda_link0_0"/>
+   </joint>
+   <link name="panda_link0_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.07"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link1_sphere_0" type="fixed">
+      <origin xyz="0.0 -0.08 0.0" rpy="0 0 0"/>
+      <parent link="panda_link1"/>
+      <child link="panda_link1_0"/>
+   </joint>
+   <link name="panda_link1_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link1_sphere_1" type="fixed">
+      <origin xyz="0.0 -0.03 0.0" rpy="0 0 0"/>
+      <parent link="panda_link1"/>
+      <child link="panda_link1_1"/>
+   </joint>
+   <link name="panda_link1_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link1_sphere_2" type="fixed">
+      <origin xyz="0.0 0.0 -0.12" rpy="0 0 0"/>
+      <parent link="panda_link1"/>
+      <child link="panda_link1_2"/>
+   </joint>
+   <link name="panda_link1_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link1_sphere_3" type="fixed">
+      <origin xyz="0.0 0.0 -0.17" rpy="0 0 0"/>
+      <parent link="panda_link1"/>
+      <child link="panda_link1_3"/>
+   </joint>
+   <link name="panda_link1_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link2_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.03" rpy="0 0 0"/>
+      <parent link="panda_link2"/>
+      <child link="panda_link2_0"/>
+   </joint>
+   <link name="panda_link2_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link2_sphere_1" type="fixed">
+      <origin xyz="0.0 0.0 0.08" rpy="0 0 0"/>
+      <parent link="panda_link2"/>
+      <child link="panda_link2_1"/>
+   </joint>
+   <link name="panda_link2_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link2_sphere_2" type="fixed">
+      <origin xyz="0.0 -0.12 0.0" rpy="0 0 0"/>
+      <parent link="panda_link2"/>
+      <child link="panda_link2_2"/>
+   </joint>
+   <link name="panda_link2_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link2_sphere_3" type="fixed">
+      <origin xyz="0.0 -0.17 0.0" rpy="0 0 0"/>
+      <parent link="panda_link2"/>
+      <child link="panda_link2_3"/>
+   </joint>
+   <link name="panda_link2_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link3_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 -0.06" rpy="0 0 0"/>
+      <parent link="panda_link3"/>
+      <child link="panda_link3_0"/>
+   </joint>
+   <link name="panda_link3_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.05"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link3_sphere_1" type="fixed">
+      <origin xyz="0.0 0.0 -0.1" rpy="0 0 0"/>
+      <parent link="panda_link3"/>
+      <child link="panda_link3_1"/>
+   </joint>
+   <link name="panda_link3_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link3_sphere_2" type="fixed">
+      <origin xyz="0.08 0.06 0.0" rpy="0 0 0"/>
+      <parent link="panda_link3"/>
+      <child link="panda_link3_2"/>
+   </joint>
+   <link name="panda_link3_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.055"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link3_sphere_3" type="fixed">
+      <origin xyz="0.08 0.02 0.0" rpy="0 0 0"/>
+      <parent link="panda_link3"/>
+      <child link="panda_link3_3"/>
+   </joint>
+   <link name="panda_link3_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.055"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link4_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.02" rpy="0 0 0"/>
+      <parent link="panda_link4"/>
+      <child link="panda_link4_0"/>
+   </joint>
+   <link name="panda_link4_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.055"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link4_sphere_1" type="fixed">
+      <origin xyz="0.0 0.0 0.06" rpy="0 0 0"/>
+      <parent link="panda_link4"/>
+      <child link="panda_link4_1"/>
+   </joint>
+   <link name="panda_link4_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.055"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link4_sphere_2" type="fixed">
+      <origin xyz="-0.08 0.095 0.0" rpy="0 0 0"/>
+      <parent link="panda_link4"/>
+      <child link="panda_link4_2"/>
+   </joint>
+   <link name="panda_link4_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link4_sphere_3" type="fixed">
+      <origin xyz="-0.08 0.06 0.0" rpy="0 0 0"/>
+      <parent link="panda_link4"/>
+      <child link="panda_link4_3"/>
+   </joint>
+   <link name="panda_link4_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.055"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_0" type="fixed">
+      <origin xyz="0.0 0.055 0.0" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_0"/>
+   </joint>
+   <link name="panda_link5_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_1" type="fixed">
+      <origin xyz="0.0 0.075 0.0" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_1"/>
+   </joint>
+   <link name="panda_link5_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_2" type="fixed">
+      <origin xyz="0.0 0.0 -0.22" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_2"/>
+   </joint>
+   <link name="panda_link5_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_3" type="fixed">
+      <origin xyz="0.0 0.05 -0.18" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_3"/>
+   </joint>
+   <link name="panda_link5_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.05"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_4" type="fixed">
+      <origin xyz="0.01 0.08 -0.14" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_4"/>
+   </joint>
+   <link name="panda_link5_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_5" type="fixed">
+      <origin xyz="0.01 0.085 -0.11" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_5"/>
+   </joint>
+   <link name="panda_link5_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_6" type="fixed">
+      <origin xyz="0.01 0.09 -0.08" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_6"/>
+   </joint>
+   <link name="panda_link5_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_7" type="fixed">
+      <origin xyz="0.01 0.095 -0.05" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_7"/>
+   </joint>
+   <link name="panda_link5_7">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_8" type="fixed">
+      <origin xyz="-0.01 0.08 -0.14" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_8"/>
+   </joint>
+   <link name="panda_link5_8">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_9" type="fixed">
+      <origin xyz="-0.01 0.085 -0.11" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_9"/>
+   </joint>
+   <link name="panda_link5_9">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_10" type="fixed">
+      <origin xyz="-0.01 0.09 -0.08" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_10"/>
+   </joint>
+   <link name="panda_link5_10">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link5_sphere_11" type="fixed">
+      <origin xyz="-0.01 0.095 -0.05" rpy="0 0 0"/>
+      <parent link="panda_link5"/>
+      <child link="panda_link5_11"/>
+   </joint>
+   <link name="panda_link5_11">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link6_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+      <parent link="panda_link6"/>
+      <child link="panda_link6_0"/>
+   </joint>
+   <link name="panda_link6_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link6_sphere_1" type="fixed">
+      <origin xyz="0.08 0.03 0.0" rpy="0 0 0"/>
+      <parent link="panda_link6"/>
+      <child link="panda_link6_1"/>
+   </joint>
+   <link name="panda_link6_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link6_sphere_2" type="fixed">
+      <origin xyz="0.08 -0.01 0.0" rpy="0 0 0"/>
+      <parent link="panda_link6"/>
+      <child link="panda_link6_2"/>
+   </joint>
+   <link name="panda_link6_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.06"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link7_sphere_0" type="fixed">
+      <origin xyz="0.0 0.0 0.07" rpy="0 0 0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link7_0"/>
+   </joint>
+   <link name="panda_link7_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.05"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link7_sphere_1" type="fixed">
+      <origin xyz="0.02 0.04 0.08" rpy="0 0 0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link7_1"/>
+   </joint>
+   <link name="panda_link7_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link7_sphere_2" type="fixed">
+      <origin xyz="0.04 0.02 0.08" rpy="0 0 0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link7_2"/>
+   </joint>
+   <link name="panda_link7_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.025"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link7_sphere_3" type="fixed">
+      <origin xyz="0.04 0.06 0.085" rpy="0 0 0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link7_3"/>
+   </joint>
+   <link name="panda_link7_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_link7_sphere_4" type="fixed">
+      <origin xyz="0.06 0.04 0.085" rpy="0 0 0"/>
+      <parent link="panda_link7"/>
+      <child link="panda_link7_4"/>
+   </joint>
+   <link name="panda_link7_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_0" type="fixed">
+      <origin xyz="0.0 -0.075 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_0"/>
+   </joint>
+   <link name="panda_hand_0">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_1" type="fixed">
+      <origin xyz="0.0 -0.045 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_1"/>
+   </joint>
+   <link name="panda_hand_1">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_2" type="fixed">
+      <origin xyz="0.0 -0.015 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_2"/>
+   </joint>
+   <link name="panda_hand_2">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_3" type="fixed">
+      <origin xyz="0.0 0.015 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_3"/>
+   </joint>
+   <link name="panda_hand_3">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_4" type="fixed">
+      <origin xyz="0.0 0.045 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_4"/>
+   </joint>
+   <link name="panda_hand_4">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_5" type="fixed">
+      <origin xyz="0.0 0.075 0.01" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_5"/>
+   </joint>
+   <link name="panda_hand_5">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.028"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_6" type="fixed">
+      <origin xyz="0.0 -0.075 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_6"/>
+   </joint>
+   <link name="panda_hand_6">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_7" type="fixed">
+      <origin xyz="0.0 -0.045 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_7"/>
+   </joint>
+   <link name="panda_hand_7">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_8" type="fixed">
+      <origin xyz="0.0 -0.015 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_8"/>
+   </joint>
+   <link name="panda_hand_8">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_9" type="fixed">
+      <origin xyz="0.0 0.015 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_9"/>
+   </joint>
+   <link name="panda_hand_9">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_10" type="fixed">
+      <origin xyz="0.0 0.045 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_10"/>
+   </joint>
+   <link name="panda_hand_10">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_11" type="fixed">
+      <origin xyz="0.0 0.075 0.03" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_11"/>
+   </joint>
+   <link name="panda_hand_11">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.026"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_12" type="fixed">
+      <origin xyz="0.0 -0.075 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_12"/>
+   </joint>
+   <link name="panda_hand_12">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_13" type="fixed">
+      <origin xyz="0.0 -0.045 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_13"/>
+   </joint>
+   <link name="panda_hand_13">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_14" type="fixed">
+      <origin xyz="0.0 -0.015 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_14"/>
+   </joint>
+   <link name="panda_hand_14">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_15" type="fixed">
+      <origin xyz="0.0 0.015 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_15"/>
+   </joint>
+   <link name="panda_hand_15">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_16" type="fixed">
+      <origin xyz="0.0 0.045 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_16"/>
+   </joint>
+   <link name="panda_hand_16">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_17" type="fixed">
+      <origin xyz="0.0 0.075 0.05" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_17"/>
+   </joint>
+   <link name="panda_hand_17">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.024"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_18" type="fixed">
+      <origin xyz="0.0 -0.045 0.085" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_18"/>
+   </joint>
+   <link name="panda_hand_18">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+   <joint name="joint_panda_hand_sphere_19" type="fixed">
+      <origin xyz="0.0 0.045 0.085" rpy="0 0 0"/>
+      <parent link="panda_hand"/>
+      <child link="panda_hand_19"/>
+   </joint>
+   <link name="panda_hand_19">
+      <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+      <visual>
+         <geometry>
+            <sphere radius="0.02"/>
+         </geometry>
+         <material name="orange">
+            <color rgba="1 0.65 0 1"/>
+         </material>
+      </visual>
+   </link>
+</robot>

@@ -1,0 +1,104 @@
+<?xml version="1.0"?>
+<robot name="pointmass2d">
+
+  <link name="base">
+    <visual>
+      <geometry>
+        <box size="0.01 0.01 0.01"/>
+      </geometry>
+      <material name="box">
+        <color rgba="1. 0. 0. 1"/>
+      </material>
+    </visual>
+  </link>
+
+
+  <link name="dummy">
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <box size="0.01 0.01 0.01"/>-->
+<!--      </geometry>-->
+<!--      <material name="box">-->
+<!--        <color rgba="0. 1. 0. 1"/>-->
+<!--      </material>-->
+<!--    </visual>-->
+<!--    <inertial>-->
+<!--      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>-->
+<!--      <mass value="0.001"/>-->
+<!--      <inertia ixx="0.00000167" ixy="0" ixz="0" iyy="0.00000167" iyz="0" izz="0.00000167"/>-->
+<!--    </inertial>-->
+  </link>
+
+  <link name="dummy2">
+<!--    <visual>-->
+<!--      <geometry>-->
+<!--        <box size="0.01 0.01 0.01"/>-->
+<!--      </geometry>-->
+<!--      <material name="dummy2">-->
+<!--        <color rgba="0. 1. 0. 1"/>-->
+<!--      </material>-->
+<!--    </visual>-->
+<!--    <inertial>-->
+<!--      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>-->
+<!--      <mass value="0.001"/>-->
+<!--      <inertia ixx="0.00000167" ixy="0" ixz="0" iyy="0.00000167" iyz="0" izz="0.00000167"/>-->
+<!--    </inertial>-->
+  </link>
+
+  <link name="dummy3">
+  </link>
+
+  <joint name="p_joint_x" type="prismatic">
+    <axis xyz="1 0 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="base"/>
+    <child link="dummy"/>
+    <limit effort="1.0" lower="-1.0" upper="1.0" velocity="5.0"/>
+  </joint>
+
+  <joint name="p_joint_y" type="prismatic">
+    <axis xyz="0 1 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="dummy"/>
+    <child link="dummy2"/>
+    <limit effort="1.0" lower="-1.0" upper="1.0" velocity="5.0"/>
+  </joint>
+
+  <joint name="p_joint_z" type="prismatic">
+    <axis xyz="0 0 1"/>
+    <origin xyz="0 0 0"/>
+    <parent link="dummy2"/>
+    <child link="dummy3"/>
+    <limit effort="1.0" lower="-1.0" upper="1.0" velocity="5.0"/>
+  </joint>
+
+  <link name="robot">
+    <visual>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+      <material name="robot">
+        <color rgba="0 0 1 1"/>
+      </material>
+    </visual>
+    <collision>
+      <geometry>
+        <sphere radius="0.02"/>
+      </geometry>
+<!--      <contact_coefficients mu=".00005" kp="0." kd="0."/>-->
+    </collision>
+<!--    <inertial>-->
+<!--      <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>-->
+<!--      <mass value="1."/>-->
+<!--      <inertia ixx="0.00541667" ixy="0" ixz="0" iyy="0.02104167" iyz="0" izz="0.02604167"/>-->
+<!--    </inertial>-->
+  </link>
+
+  <joint name="fixed_dummy3_robot" type="fixed">
+    <axis xyz="0 0 0"/>
+    <origin xyz="0 0 0"/>
+    <parent link="dummy3"/>
+    <child link="robot"/>
+  </joint>
+
+</robot>

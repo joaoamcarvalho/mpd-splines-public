@@ -1,0 +1,41 @@
+import matplotlib as mpl
+
+# Matplotlib settings
+mpl.rcParams.update(
+    {
+        "pdf.fonttype": 42,
+        "ps.fonttype": 42,
+        "text.usetex": False,
+        "text.latex.preamble": r"\usepackage{amsmath} \usepackage{underscore}",
+        "font.family": "sans-serif",
+        "font.sans-serif": ["Roboto"],
+        "font.size": 24,
+        "font.weight": "bold",
+        "axes.labelsize": 24,
+        "axes.titlesize": 24,
+        "axes.titleweight": "bold",
+        "axes.grid": False,
+        "axes.grid.axis": "both",
+        "axes.axisbelow": True,
+        "axes.linewidth": 1.5,
+        "axes.labelweight": "bold",
+        "xtick.labelsize": 24,
+        "ytick.labelsize": 24,
+        "xtick.major.size": 10,
+        "xtick.minor.size": 5,
+        "ytick.major.size": 10,
+        "ytick.minor.size": 5,
+        "legend.fontsize": 24,
+        "legend.title_fontsize": 24,
+        "legend.labelspacing": 0.2,
+        "legend.handletextpad": 0.5,
+        "lines.linewidth": 4,
+        "lines.linestyle": "-",
+        "lines.markersize": 10,
+        "grid.color": "grey",
+        "grid.linestyle": "-",
+        "grid.linewidth": 0.9,
+        "grid.alpha": 0.5,
+        "patch.linewidth": 1.0,
+    }
+)

@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<!--
+    This is the URDF file for a simple sphere model.
+  -->
+<robot name="sphere">
+    <!--
+    Define the material or color of the box
+    -->
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <!--
+    Define the bottom plate
+    -->
+    <link name="bottom_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+<!--                <sphere radius="1.0"/>-->
+                <sphere radius="0.15"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+<!--                <sphere radius="0.9"/>-->
+                <sphere radius="0.15"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+</robot>

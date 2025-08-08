@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!--
+    This is the URDF file for a simple box model.
+    It consists of 5 box geometries: A bottom plate and the four walls around but without a lid / top plate.
+        - - -  N - - -
+        |            |
+        W      B     E
+        |            |
+        - - -  S - - -
+     B := Bottom plate (box geometry);
+     N := North plate (box geometry);
+     S := South plate (box geometry);
+     W := West plate (box geometry);
+     E := East plate (box geometry);
+  -->
+<robot name="box">
+    <!--
+    Define the material or color of the box
+    -->
+    <material name="white">
+        <color rgba="1 1 1 1"/>
+    </material>
+
+    <!--
+    Define the bottom plate
+    -->
+    <link name="bottom_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="1. 1. 0.05"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="1. 1. 0.05"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+
+    <!--
+    Define the wall on the east
+    -->
+    <link name="east_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="0.05 1. 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.05 1. 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+
+    <!--
+    Define the wall on the west
+    -->
+    <link name="west_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="0.05 1. 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.05 1. 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+
+    <!--
+    Define the wall on the south
+    -->
+    <link name="south_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="0.995 0.05 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.995 0.05 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+
+    <!--
+    Define the wall on the north
+    -->
+    <link name="north_plate">
+        <inertial>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <mass value="1"/>
+            <inertia ixx="0." ixy="-0." ixz="0." iyy="0." iyz="0." izz="0."/>
+        </inertial>
+        <visual>
+            <geometry>
+                <box size="0.995 0.05 0.75"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+            <material name="white"/>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0.995 0.05 0.7"/>
+            </geometry>
+            <origin rpy="0. 0. 0." xyz="0. 0. 0."/>
+        </collision>
+    </link>
+
+    <!--
+    Create a joint between each wall and the bottom_plate
+    -->
+    <joint name="bottom2east" type="fixed">
+        <parent link="bottom_plate"/>
+        <child link="east_plate"/>
+        <origin xyz="0.475 0. 0.25"/>
+    </joint>
+    <joint name="bottom2west" type="fixed">
+        <parent link="bottom_plate"/>
+        <child link="west_plate"/>
+        <origin xyz="-0.475 0. 0.25"/>
+    </joint>
+    <joint name="bottom2south" type="fixed">
+        <parent link="bottom_plate"/>
+        <child link="south_plate"/>
+        <origin xyz="0. -0.475 0.25"/>
+    </joint>
+    <joint name="bottom2north" type="fixed">
+        <parent link="bottom_plate"/>
+        <child link="north_plate"/>
+        <origin xyz="0. 0.475 0.25"/>
+    </joint>
+</robot>

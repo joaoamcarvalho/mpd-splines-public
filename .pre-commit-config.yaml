@@ -1,0 +1,36 @@
+# .pre-commit-config.yaml
+
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0 # Use a recent stable version
+    hooks:
+      - id: trailing-whitespace
+      - id: end-of-file-fixer
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-added-large-files
+      - id: debug-statements
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+
+  - repo: https://github.com/psf/black
+    rev: 24.8.0 # Use the latest stable Black version
+    hooks:
+      - id: black
+        args: [--line-length=120]
+        language_version: python3.8 # Match your project's Python version
+
+#  - repo: https://github.com/PyCQA/isort
+#    rev: 5.13.2 # Use a recent stable isort version
+#    hooks:
+#      - id: isort
+#        name: isort (python)
+#        args: ["--profile", "black"] # Make isort compatible with Black
+
+#  - repo: https://github.com/charliermarsh/ruff-pre-commit
+#    rev: v0.4.5 # Use a recent stable Ruff version
+#    hooks:
+#      - id: ruff
+#        args: [--fix, --exit-non-zero-on-fix] # Automatically fix issues, and fail if fixes were applied
+#      - id: ruff-format # Optional: Ruff can also format, but Black is typically used for Python formatting

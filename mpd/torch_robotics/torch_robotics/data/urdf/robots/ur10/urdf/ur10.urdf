@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot name="ur10">
+    <link name="base_link">
+        <collision>
+            <origin xyz="0 0 0.02" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.075" length="0.03"/>
+            </geometry>
+        </collision>
+        <visual>
+            <origin xyz="0 0 0" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_base.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <inertial>
+            <mass value="200.0"/>
+        </inertial>
+    </link>
+    <link name="shoulder_link">
+        <visual>
+            <origin xyz="0 0 -.1273" rpy="0 0 0"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_shoulder.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0 0.0 0.0027000046" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.075" length="0.17"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0 .0425  0.007000065" rpy="1.57079632679 0 0"/>
+            <geometry>
+                <cylinder radius="0.075" length="0.085"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="7.1"/>
+        </inertial>
+    </link>
+    <link name="upper_arm_link">
+        <visual>
+            <origin xyz="-0.0007000065 -0.044941006 0" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_upper_arm.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.0007000065 -0.044941006 0" rpy="1.57079632679 0 0"/>
+            <geometry>
+                <cylinder radius="0.075" length="0.175"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.0007000065 -0.044941006 0.306" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.612"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.0007000065 -0.044941006 0.612" rpy="1.57079632679 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.136"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="12.7"/>
+        </inertial>
+    </link>
+    <link name="forearm_link">
+        <visual>
+            <origin xyz="-0.0007000351 -0.0010410404 0" rpy="0 -1.57079632679 0"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_forearm.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="-0.0007000351 -0.0041510403 0" rpy="1.57079632679 0 0"/>
+            <geometry>
+                <cylinder radius="0.06" length="0.126"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.0007000351 -0.0010410404 0.286" rpy="0 0 0"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.572"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="-0.0007000547 0.0017589596 0.572" rpy="1.57079632679 0 0"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.118"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="4.27"/>
+        </inertial>
+    </link>
+    <link name="wrist_1_link">
+        <visual>
+            <origin xyz="0.0002999115 0.11495896 -0.0007000637" rpy="-3.14159265359 0 -3.14159265359"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_wrist_1.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0002999115 0.08745896 -0.0007000637" rpy="1.57079632679 0 3.14159265359"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.055"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0002999115 0.11495896 0.0020999363" rpy="-3.14159265359 0 -3.14159265359"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.118"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+        </inertial>
+    </link>
+    <link name="wrist_2_link">
+        <visual>
+            <origin xyz="0.0002999115 0.000058994293 0.11529993" rpy="-3.14159265359 0 -3.14159265359"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_wrist_2.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0002999115 0.000058994293 0.08829992" rpy="-3.14159265359 0 -3.14159265359"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.054"/>
+            </geometry>
+        </collision>
+        <collision>
+            <origin xyz="0.0002999115 0.0028589943 0.11529993" rpy="1.57079632679 0 3.14159265359"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.118"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="1.0"/>
+        </inertial>
+    </link>
+    <link name="wrist_3_link">
+        <visual>
+            <origin xyz="0.0002999115 0.09205898 -0.00040007472" rpy="-3.14159265359 0 -3.14159265359"/>
+            <geometry>
+                <mesh filename="../meshes/ur10_wrist_3.obj" scale="1 1 1"/>
+            </geometry>
+        </visual>
+        <collision>
+            <origin xyz="0.0002999115 0.077058983 -0.00040007472" rpy="1.57079632679 0 -3.14159265359"/>
+            <geometry>
+                <cylinder radius="0.047" length="0.03"/>
+            </geometry>
+        </collision>
+        <inertial>
+            <mass value="0.365"/>
+        </inertial>
+    </link>
+    <joint name="shoulder_pan_joint" type="revolute">
+        <origin rpy="0 0 0" xyz="0 0 0.1273"/>
+        <axis xyz="0 0 1" />
+        <limit upper="6.28318" lower="-6.28318" velocity="2.0944" effort="330" />
+        <parent link="base_link" />
+        <child link ="shoulder_link" />
+    </joint>
+    <joint name="shoulder_lift_joint" type="revolute">
+        <origin rpy="0.0 1.5707963267948966 0.0" xyz="0.0 0.220941 0.0"/>
+        <axis xyz="0 1 0" />
+        <limit upper="6.28318" lower="-6.28318" velocity="2.0944" effort="330.0" />
+        <parent link ="shoulder_link" />
+        <child link="upper_arm_link" />
+    </joint>
+    <joint name="elbow_joint" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 -0.1719 0.612"/>
+        <axis xyz="0 1 0" />
+        <limit upper="6.28318" lower="-6.28318" velocity="3.14159" effort="150.0" />
+        <parent link ="upper_arm_link" />
+        <child link="forearm_link" />
+    </joint>
+    <joint name="wrist_1_joint" type="revolute">
+        <origin rpy="0.0 1.5707963267948966 0.0" xyz="0.0 0.0 0.5723"/>
+        <axis xyz="0 1 0" />
+        <limit upper="6.28318" lower="-6.28318" velocity="3.14159" effort="56.0" />
+        <parent link ="forearm_link" />
+        <child link="wrist_1_link" />
+    </joint>
+    <joint name="wrist_2_joint" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.1149 0.0"/>
+        <axis xyz="0 0 1"/>
+        <limit upper="6.28318" lower="-6.28318" velocity="3.14159" effort="56.0" />
+        <parent link ="wrist_1_link" />
+        <child link="wrist_2_link" />
+    </joint>
+    <joint name="wrist_3_joint" type="revolute">
+        <origin rpy="0.0 0.0 0.0" xyz="0.0 0.0 0.1157"/>
+        <axis xyz="0 1 0" />
+        <limit upper="6.28318" lower="-6.28318" velocity="3.14159" effort="56.0" />
+        <parent link ="wrist_2_link" />
+        <child link="wrist_3_link" />
+    </joint>
+    <joint name="ee_fixed_joint" type="fixed">
+        <parent link="wrist_3_link"/>
+        <child link="ee_link"/>
+        <origin rpy="0.0 0.0 1.5707963267948966" xyz="0.0 0.0922 0.0"/>
+    </joint>
+    <link name="ee_link">
+        <collision>
+            <geometry>
+                <box size="0.01 0.01 0.01"/>
+            </geometry>
+            <origin rpy="0 0 0" xyz="-0.01 0 0"/>
+        </collision>
+    </link>
+</robot>

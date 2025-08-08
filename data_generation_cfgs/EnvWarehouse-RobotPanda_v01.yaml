@@ -1,0 +1,44 @@
+# Define the limits of the EE pose in the base frame
+# EE poses are sampled inside the limits, to generate multiple joint configurations used for planning
+env_id: 'EnvWarehouse'
+robot_id: 'RobotPanda'
+
+# translations: limits of translations in each axis to sample from
+# rotations: end-effector rotation in base frame and limits of rotations around each axis to sample from
+
+# If true, the robot will move to these pose regions, and also start and end at these pose regions
+move_between_pose_regions: True
+
+pose_regions:
+  region_00:  # top of small shelf
+    translation:
+      x: [[0.10, 0.75]]
+      y: [[-0.75, -0.45]]
+      z: [[0.30, 0.40]]
+    rotation:
+      base: [[0, 0, 1], [0, 1, 0], [-1, 0, 0]]
+      x: [[-15., 15.]]
+      y: [[-15., 15.]]
+      z: [[-15., 15.]]
+
+  region_01:  # big shelf
+    translation:
+      x: [[0.15, 0.60]]
+      y: [[0.45, 0.60]]
+      z: [[0.10, 0.15], [0.30, 0.40], [0.57, 0.70]]
+    rotation:
+      base: [[0, -1, 0], [0, 0, 1], [-1, 0, 0]]
+      x: [[-15., 15.]]
+      y: [[-15., 15.]]
+      z: [[-15., 15.]]
+
+  region_02:  # top of the table
+    translation:
+      x: [[0.30, 0.80]]
+      y: [[-0.25, 0.25]]
+      z: [[0.15, 0.25]]
+    rotation:
+      base: [[-1, 0, 0], [0, 1, 0], [0, 0, -1]]
+      x: [[-15., 15.]]
+      y: [[-15., 15.]]
+      z: [[-90., 90.]]
