@@ -1,6 +1,6 @@
 # Motion Planning Diffusion: Learning and Adapting Robot Motion Planning with Diffusion Models
 
-[![publisher](https://img.shields.io/badge/Publisher-%F0%9F%93%96-lightgray)](https://ieeexplore.ieee.org/abstract/document/11097366)
+[![paper](https://img.shields.io/badge/Paper-%F0%9F%93%96-lightgray)](https://ieeexplore.ieee.org/abstract/document/11097366)
 [![arXiv](https://img.shields.io/badge/arXiv-2502.08378-brown)](https://arxiv.org/abs/2412.19948)
 [![](https://img.shields.io/badge/Website-%F0%9F%9A%80-yellow)](https://sites.google.com/view/motionplanningdiffusion/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-purple.svg)]()
