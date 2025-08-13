@@ -1,9 +1,9 @@
 [submodule "deps/experiment_launcher"]
 	path = deps/experiment_launcher
-	url = git@git.ias.informatik.tu-darmstadt.de:common/experiment_launcher.git
+	url = https://git.ias.informatik.tu-darmstadt.de/common/experiment_launcher.git
 [submodule "deps/pybullet_ompl"]
 	path = deps/pybullet_ompl
-	url = git@github.com:jacarvalho/pybullet_ompl.git
+	url = git@github.com:joaoamcarvalho/pybullet_ompl.git
 [submodule "deps/theseus"]
 	path = deps/theseus
 	url = git@github.com:facebookresearch/theseus.git
