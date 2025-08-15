@@ -21,6 +21,9 @@ conda env create -f environment.yml
 
 conda activate mpd-splines
 
+conda config --add channels conda-forge
+conda config --set channel_priority strict
+
 # https://github.com/AUTOMATIC1111/stable-diffusion-webui/issues/15863#issuecomment-2125026282
 pip install setuptools==69.5.1
 
