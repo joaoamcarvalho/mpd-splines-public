@@ -4,6 +4,3 @@
 [submodule "deps/pybullet_ompl"]
 	path = deps/pybullet_ompl
 	url = git@github.com:joaoamcarvalho/pybullet_ompl.git
-[submodule "deps/theseus"]
-	path = deps/theseus
-	url = git@github.com:facebookresearch/theseus.git
