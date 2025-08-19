@@ -1,8 +1,10 @@
+#!/bin/bash
+
 git submodule update --init --recursive --progress
 
 eval "$(~/miniconda3/bin/conda shell.bash hook)"
 
-CONDA_ENV_NAME="mpd-splines"
+CONDA_ENV_NAME="mpd-splines-public"
 
 # check if a conda environment with the same name already exists, if yes remove it
 if conda env list | grep -q "${CONDA_ENV_NAME}"; then
@@ -23,7 +25,7 @@ fi
 
 conda update -n base conda
 
-conda env create -f environment-test.yml
+conda env create -f environment.yml
 
 conda activate ${CONDA_ENV_NAME}
 

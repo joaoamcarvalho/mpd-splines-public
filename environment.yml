@@ -1,4 +1,4 @@
-name: mpd-splines
+name: mpd-splines-public
 channels:
 - conda-forge
 - anaconda

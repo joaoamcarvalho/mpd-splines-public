@@ -28,14 +28,14 @@ Clone this repository
 ```bash
 mkdir -p ~/Projects/MotionPlanningDiffusion/
 cd ~/Projects/MotionPlanningDiffusion/
-git clone --recurse-submodules git@github.com:joaoamcarvalho/mpd-splines-public.git mpd-splines
-cd mpd-splines
+git clone --recurse-submodules git@github.com:joaoamcarvalho/mpd-splines-public.git mpd-splines-public
+cd mpd-splines-public
 ```
 
 Download [IsaacGym Preview 4](https://developer.nvidia.com/isaac-gym) and extract it under `deps/isaacgym`
 ```bash
-mv ~/Downloads/IsaacGym_Preview_4_Package.tar.gz ~/Projects/MotionPlanningDiffusion/mpd-splines/deps/
-cd ~/Projects/MotionPlanningDiffusion/mpd-splines/deps
+mv ~/Downloads/IsaacGym_Preview_4_Package.tar.gz ~/Projects/MotionPlanningDiffusion/mpd-splines-public/deps/
+cd ~/Projects/MotionPlanningDiffusion/mpd-splines-public/deps
 tar -xvf IsaacGym_Preview_4_Package.tar.gz
 ```
 
@@ -44,12 +44,15 @@ Run the bash setup script to install everything (it can take a while).
 bash setup.sh
 ```
 
-For isaacgym, update `LD_LIBRARY_PATH` in your `.bashrc`:
+Make sure to set environment variables before running any scripts.
 ```bash
-CONDA_ENV_LIB=$HOME/miniconda3/envs/mpd-splines/lib
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$CONDA_ENV_LIB
+export LD_LIBRARY_PATH=$HOME/miniconda3/envs/mpd-splines-public/lib
 ```
 
+Make sure to activate the conda environment before running any scripts.
+```bash
+conda activate mpd-splines-public
+```
 
 ---
 ## Download the datasets and pre-trained models
@@ -120,21 +123,6 @@ python train.py
 ```
 
 To train multiple models in parallel, use the `launch_train_*` files.
-
-
-
----
-## Troubleshooting
-
-Make sure to activate the conda environment before running any scripts.
-```bash
-conda activate mpd-splines
-```
-
-Make sure to have the environment variable
-```bash
-LD_LIBRARY_PATH=$HOME/miniconda3/envs/mpd-splines/lib
-```
 
 
 ---
