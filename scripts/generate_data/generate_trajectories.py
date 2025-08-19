@@ -481,7 +481,7 @@ def experiment(
     #######################################
     n_parallel_jobs: int = 1,  # Set to 1 to debug with pybullet GUI
     # n_parallel_jobs: int = os.cpu_count(),
-    debug: bool = False,
+    debug: bool = True,
     #######################################
     # MANDATORY
     seed: int = int(time.time()),
