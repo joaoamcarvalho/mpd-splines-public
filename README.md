@@ -44,13 +44,9 @@ Run the bash setup script to install everything (it can take a while).
 bash setup.sh
 ```
 
-Make sure to set environment variables before running any scripts.
+Make sure to set environment variables and activate the conda environment before running any scripts.
 ```bash
-export LD_LIBRARY_PATH=$HOME/miniconda3/envs/mpd-splines-public/lib
-```
-
-Make sure to activate the conda environment before running any scripts.
-```bash
+source set_env_variables.sh
 conda activate mpd-splines-public
 ```
 

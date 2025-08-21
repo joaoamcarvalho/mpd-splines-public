@@ -12,8 +12,8 @@ model_selection: 'bspline'  # 'bspline', 'waypoints'
 min_distance_q_pos_start_goal: 1.4
 
 # environment options
-#env_id_replace: null
-env_id_replace: 'EnvSimple2DExtraObjectsV00'
+env_id_replace: null
+# env_id_replace: 'EnvSimple2DExtraObjectsV00'
 grasped_object: null
 
 # collision avoidance/checking options
@@ -53,7 +53,7 @@ best_trajectory_selection: 'shortest_path_length'
 #######################################################################################################################
 # Planner options
 
-planner_alg: 'mpd'  # diffusion_prior, diffusion_prior_then_guide, mpd, gp_prior_then_guide, knn_prior_then_guide, cvae, cvae_prior_then_guide, rrtconnect_then_guide
+planner_alg: 'diffusion_prior'  # diffusion_prior, diffusion_prior_then_guide, mpd, gp_prior_then_guide, knn_prior_then_guide, cvae, cvae_prior_then_guide, rrtconnect_then_guide
 
 diffusion_sampling_method: 'ddim'  # ddim, ddpm (not tuned)
 
