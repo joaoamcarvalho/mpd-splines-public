@@ -1,3 +1,6 @@
+from mpd.utils.patches import numpy_monkey_patch
+numpy_monkey_patch()
+
 import time
 from functools import partial
 
