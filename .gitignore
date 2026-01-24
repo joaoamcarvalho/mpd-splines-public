@@ -120,8 +120,9 @@ venv.bak/
 
 # mkdocs documentation
 /site
-
+*data
 # mypy
+*data_geometric
 .mypy_cache/
 .dmypy.json
 dmypy.json
@@ -211,3 +212,13 @@ scripts/plots/planar_4_link/inference_results*
 scripts/plots/panda_front_page_thesis/plots/
 
 scripts/plots/planar_4_link/plots*
+
+# Ignore large model/binary files under small/ (keep .py files tracked)
+small/*.onnx
+small/*.engine
+small/*.pth
+small/*.npz
+small/*.zip
+small/*.png
+small/*.jpg
+small/*.jpeg
